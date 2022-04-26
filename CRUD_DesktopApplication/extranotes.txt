@@ -1,0 +1,12 @@
+﻿//Configuration config=new Configuration();
+            //ISessionFactoryConfiguration factory;
+
+            //config.SetProperty(NHibernate.Cfg.Environment.ConnectionProvider, "NHibernate.Connection.DriverConnectionProvider");
+            //config.SetProperty(NHibernate.Cfg.Environment.Dialect, "NHibernate.Dialect.MsSQL2008Dialect");
+            //config.SetProperty(NHibernate.Cfg.Environment.ConnectionDriver, "NHibernate.Driver.SqlClientDriver");
+            //config.SetProperty(NHibernate.Cfg.Environment.ConnectionString, "Data Source=SANTOSHLAPTOP\\MSSQL2019; Initial Catalog=NHibernateDemoDB;Integrated Security=true");
+            //config.SetProperty(NHibernate.Cfg.Environment.ProxyFactoryFactoryClass, "NHibernate.ByteCode.Lightweight.ProxyFactoryFactory, NHibernate.ByteCode.Lightweight");
+            //config.AddAssembly("CRUD_DesktopApplication");
+
+            //factory = (ISessionFactoryConfiguration)config.BuildSessionFactory();
+            //ISessionFactoryConfiguration session = null;
