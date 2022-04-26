@@ -81,5 +81,12 @@ namespace CRUD_DesktopApplication
             SetDbConnection();
             BindGridData();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCRUD crudfrm=new frmCRUD();
+            crudfrm.Show();
+        }
     }
 }

@@ -20,3 +20,4 @@ D:\GitProjects\Proj2\jhbsan\DesktopApplication\CRUD_DesktopApplication\obj\Debug
 D:\GitProjects\Proj2\jhbsan\DesktopApplication\CRUD_DesktopApplication\obj\Debug\CRUD_DesktopApplication.csproj.CopyComplete
 D:\GitProjects\Proj2\jhbsan\DesktopApplication\CRUD_DesktopApplication\obj\Debug\CRUD_DesktopApplication.exe
 D:\GitProjects\Proj2\jhbsan\DesktopApplication\CRUD_DesktopApplication\obj\Debug\CRUD_DesktopApplication.pdb
+D:\GitProjects\Proj2\jhbsan\DesktopApplication\CRUD_DesktopApplication\obj\Debug\CRUD_DesktopApplication.frmCRUD.resources

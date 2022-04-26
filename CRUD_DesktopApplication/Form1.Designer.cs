@@ -31,15 +31,16 @@
             this.dgEmployee = new System.Windows.Forms.DataGridView();
             this.btnGetEmployeeDetails = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // dgEmployee
             // 
             this.dgEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEmployee.Location = new System.Drawing.Point(31, 115);
+            this.dgEmployee.Location = new System.Drawing.Point(12, 113);
             this.dgEmployee.Name = "dgEmployee";
-            this.dgEmployee.Size = new System.Drawing.Size(682, 191);
+            this.dgEmployee.Size = new System.Drawing.Size(701, 191);
             this.dgEmployee.TabIndex = 0;
             // 
             // btnGetEmployeeDetails
@@ -62,11 +63,25 @@
             this.lblResult.Size = new System.Drawing.Size(0, 13);
             this.lblResult.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(511, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 44);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Perform CRUD Operations on Employee Table";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 328);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnGetEmployeeDetails);
             this.Controls.Add(this.dgEmployee);
@@ -86,6 +101,7 @@
         private System.Windows.Forms.DataGridView dgEmployee;
         private System.Windows.Forms.Button btnGetEmployeeDetails;
         private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Button button1;
     }
 }
 
