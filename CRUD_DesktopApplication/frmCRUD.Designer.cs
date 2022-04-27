@@ -36,7 +36,22 @@
             this.btnDeleteEmployeDetails = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.DojPicker = new System.Windows.Forms.DateTimePicker();
+            this.txtDepartment = new System.Windows.Forms.TextBox();
+            this.txtEmailAddress = new System.Windows.Forms.TextBox();
+            this.txtSalary = new System.Windows.Forms.TextBox();
+            this.btnSaveEmployeeDetails = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.dgEmployeesShow = new System.Windows.Forms.DataGridView();
+            this.gpCreate.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEmployeesShow)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGoBack
@@ -55,6 +70,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gpCreate.BackColor = System.Drawing.Color.White;
+            this.gpCreate.Controls.Add(this.dgEmployeesShow);
+            this.gpCreate.Controls.Add(this.btnExit);
+            this.gpCreate.Controls.Add(this.btnSaveEmployeeDetails);
+            this.gpCreate.Controls.Add(this.txtSalary);
+            this.gpCreate.Controls.Add(this.txtEmailAddress);
+            this.gpCreate.Controls.Add(this.txtDepartment);
+            this.gpCreate.Controls.Add(this.DojPicker);
+            this.gpCreate.Controls.Add(this.txtFullName);
+            this.gpCreate.Controls.Add(this.label6);
+            this.gpCreate.Controls.Add(this.label5);
+            this.gpCreate.Controls.Add(this.label4);
+            this.gpCreate.Controls.Add(this.label3);
+            this.gpCreate.Controls.Add(this.label2);
             this.gpCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpCreate.Location = new System.Drawing.Point(36, 124);
             this.gpCreate.Name = "gpCreate";
@@ -71,6 +99,7 @@
             this.btnAddEmployee.TabIndex = 2;
             this.btnAddEmployee.Text = "Add Employee Details";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // btnFetchEmployeeDetails
             // 
@@ -123,6 +152,116 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Performing CRUD Operations on Employee Table";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(57, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Employee Full Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(57, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 15);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Date of Joining";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(57, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Department";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(57, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 15);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Email Address";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(57, 171);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 15);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Salary";
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Location = new System.Drawing.Point(186, 30);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(239, 21);
+            this.txtFullName.TabIndex = 1;
+            // 
+            // DojPicker
+            // 
+            this.DojPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DojPicker.Location = new System.Drawing.Point(186, 67);
+            this.DojPicker.Name = "DojPicker";
+            this.DojPicker.Size = new System.Drawing.Size(239, 21);
+            this.DojPicker.TabIndex = 2;
+            // 
+            // txtDepartment
+            // 
+            this.txtDepartment.Location = new System.Drawing.Point(186, 103);
+            this.txtDepartment.Name = "txtDepartment";
+            this.txtDepartment.Size = new System.Drawing.Size(239, 21);
+            this.txtDepartment.TabIndex = 3;
+            // 
+            // txtEmailAddress
+            // 
+            this.txtEmailAddress.Location = new System.Drawing.Point(186, 137);
+            this.txtEmailAddress.Name = "txtEmailAddress";
+            this.txtEmailAddress.Size = new System.Drawing.Size(239, 21);
+            this.txtEmailAddress.TabIndex = 4;
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.Location = new System.Drawing.Point(186, 171);
+            this.txtSalary.MaxLength = 8;
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(239, 21);
+            this.txtSalary.TabIndex = 5;
+            // 
+            // btnSaveEmployeeDetails
+            // 
+            this.btnSaveEmployeeDetails.Location = new System.Drawing.Point(101, 202);
+            this.btnSaveEmployeeDetails.Name = "btnSaveEmployeeDetails";
+            this.btnSaveEmployeeDetails.Size = new System.Drawing.Size(167, 28);
+            this.btnSaveEmployeeDetails.TabIndex = 6;
+            this.btnSaveEmployeeDetails.Text = "Save Employee Details";
+            this.btnSaveEmployeeDetails.UseVisualStyleBackColor = true;
+            this.btnSaveEmployeeDetails.Click += new System.EventHandler(this.btnSaveEmployeeDetails_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(295, 202);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(130, 28);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Close and Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // dgEmployeesShow
+            // 
+            this.dgEmployeesShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEmployeesShow.Location = new System.Drawing.Point(24, 234);
+            this.dgEmployeesShow.Name = "dgEmployeesShow";
+            this.dgEmployeesShow.Size = new System.Drawing.Size(603, 163);
+            this.dgEmployeesShow.TabIndex = 8;
+            // 
             // frmCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,7 +275,11 @@
             this.Name = "frmCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CRUD Operations on Employee Table";
+            this.Load += new System.EventHandler(this.frmCRUD_Load);
+            this.gpCreate.ResumeLayout(false);
+            this.gpCreate.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgEmployeesShow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +295,18 @@
         private System.Windows.Forms.Button btnDeleteEmployeDetails;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgEmployeesShow;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnSaveEmployeeDetails;
+        private System.Windows.Forms.TextBox txtSalary;
+        private System.Windows.Forms.TextBox txtEmailAddress;
+        private System.Windows.Forms.TextBox txtDepartment;
+        private System.Windows.Forms.DateTimePicker DojPicker;
+        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
