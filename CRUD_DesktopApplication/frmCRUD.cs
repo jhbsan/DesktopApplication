@@ -98,6 +98,9 @@ namespace CRUD_DesktopApplication
                     using (var tx = session.BeginTransaction())
                     {
                         dgEmployeesShow.DataSource = session.CreateCriteria(typeof(Employee)).List();
+                        dgFetchAllEmployees.DataSource = session.CreateCriteria(typeof(Employee)).List();
+                        dgUpdateResult.DataSource=session.CreateCriteria(typeof(Employee)).List();
+                        DgDelete.DataSource= session.CreateCriteria(typeof(Employee)).List();
                         tx.Commit();
                     }
 
@@ -125,6 +128,10 @@ namespace CRUD_DesktopApplication
         private void frmCRUD_Load(object sender, EventArgs e)
         {
             gpCreate.Visible = false;
+            gpFetch.Visible = false;
+            GpUpdate.Visible = false;
+            
+            
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
@@ -132,11 +139,175 @@ namespace CRUD_DesktopApplication
             if (gpCreate.Visible == false)
             {
                 gpCreate.Visible = true;
+                gpFetch.Visible = false;
             }
             else
             {
                 gpCreate.Visible=false;
             }
+            
+        }
+
+        private void btnFetchEmployeeDetails_Click(object sender, EventArgs e)
+        {
+            if(gpFetch.Visible==false)
+            {
+                gpFetch.Visible = true;
+                gpCreate.Visible = true;
+                GpUpdate.Visible = false;
+                GpDelete.Visible = false;
+            }
+            else
+            {
+                gpFetch.Visible=false;
+                gpCreate.Visible=false;
+            } 
+        }
+
+        private void btnUpdateEmployeeDetails_Click(object sender, EventArgs e)
+        {
+            if (GpUpdate.Visible == false)
+            {
+                gpCreate.Visible = true;
+                gpFetch.Visible = true;
+                GpUpdate.Visible = true;
+                GpDelete.Visible=false;
+            }
+            else
+            {
+                GpUpdate.Visible = false;
+                gpFetch.Visible = false;
+                gpCreate.Visible = false;
+            }
+        }
+
+        private void btnDeleteEmployeDetails_Click(object sender, EventArgs e)
+        {
+            if (GpDelete.Visible == false)
+            {
+                GpDelete.Visible = true;
+                gpFetch.Visible = true;
+                GpUpdate.Visible = true;
+                gpCreate.Visible = true;
+            }
+            else
+            {
+                GpUpdate.Visible = false;
+                gpFetch.Visible = false;
+                gpCreate.Visible = (GpUpdate.Visible);
+            }
+
+        }
+
+        //getting employee details by ID
+        public void GetEmployeeByID()
+        {
+            var cfg = new Configuration();
+            int idvalue = Convert.ToInt32(txtEmployeeID.Text);
+
+            string str = "Data Source=SANTOSHLAPTOP\\MSSQL2019; Initial Catalog=NHibernateDemoDB;Integrated Security=true";
+            cfg.DataBaseIntegration(x => {
+                x.ConnectionString = str;
+                x.Driver<SqlClientDriver>(); x.Dialect<MsSql2008Dialect>();
+            });
+            cfg.AddAssembly(Assembly.GetExecutingAssembly());
+            var sefact = cfg.BuildSessionFactory();
+            using (var session = sefact.OpenSession())
+            {
+                using (var tx = session.BeginTransaction())
+                {
+                    //dgFetchID.DataMember[Employee] = session.Get<Employee>(idvalue);
+
+                       
+                    
+                    
+                    
+                    tx.Commit();
+                }
+            }
+        }
+        private void btnFetchAllEmployeeDetails_Click(object sender, EventArgs e)
+        {
+            BindGridData();
+        }
+
+        private void btnFetchByID_Click(object sender, EventArgs e)
+        {
+            GetEmployeeByID();
+            txtEmployeeID.Text = "";
+            txtEmployeeID.Focus();
+        }
+
+        public void UpdateEmployeeDetails()
+        {
+            var cfg = new Configuration();
+            int idvalue = Convert.ToInt32(txtUpdate.Text);
+
+            string str = "Data Source=SANTOSHLAPTOP\\MSSQL2019; Initial Catalog=NHibernateDemoDB;Integrated Security=true";
+            cfg.DataBaseIntegration(x => {
+                x.ConnectionString = str;
+                x.Driver<SqlClientDriver>(); x.Dialect<MsSql2008Dialect>();
+            });
+            cfg.AddAssembly(Assembly.GetExecutingAssembly());
+            var sefact = cfg.BuildSessionFactory();
+            using (var session = sefact.OpenSession())
+            {
+                using (var tx = session.BeginTransaction())
+                {
+                    var emp = session.Get<Employee>(idvalue);
+                    emp.EmpName = txtFullNameforUpdate.Text.ToString();
+                    emp.EmailID = txtEmailforUpdate.Text.ToString();
+                    session.Update(emp);
+                    tx.Commit();
+                    lblUpdateResult.Text = "Updated Successfully";
+                }
+            }
+            BindGridData();
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateEmployeeDetails();
+            txtUpdate.Text = "";
+            txtEmailforUpdate.Text = "";
+            txtFullNameforUpdate.Text = "";
+            txtUpdate.Focus();
+        }
+
+        public void DeleteEmployeeDetails()
+        {
+            var cfg = new Configuration();
+            int idvalue = Convert.ToInt32(txtDelete.Text);
+
+            string str = "Data Source=SANTOSHLAPTOP\\MSSQL2019; Initial Catalog=NHibernateDemoDB;Integrated Security=true";
+            cfg.DataBaseIntegration(x => {
+                x.ConnectionString = str;
+                x.Driver<SqlClientDriver>(); x.Dialect<MsSql2008Dialect>();
+            });
+            cfg.AddAssembly(Assembly.GetExecutingAssembly());
+            var sefact = cfg.BuildSessionFactory();
+            using (var session = sefact.OpenSession())
+            {
+                using (var tx = session.BeginTransaction())
+                {
+                    var emp = session.Get<Employee>(idvalue);
+                    session.Delete(emp);
+                    tx.Commit();
+                    lblDeleteResult.Text = "Deleted Employee Details Successfully";
+                }
+            }
+            BindGridData();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            DeleteEmployeeDetails();
+            txtDelete.Text = "";
+            txtDelete.Focus();
         }
     }
 }
