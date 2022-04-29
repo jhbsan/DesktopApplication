@@ -14,5 +14,7 @@ namespace CRUD_DesktopApplication
         public virtual string Department { get; set; }
         public virtual string EmailID { get; set; }
         public virtual decimal Salary { get; set; }
+
+       
     }
 }

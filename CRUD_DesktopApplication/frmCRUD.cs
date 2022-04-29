@@ -216,12 +216,10 @@ namespace CRUD_DesktopApplication
             {
                 using (var tx = session.BeginTransaction())
                 {
-                    //dgFetchID.DataMember[Employee] = session.Get<Employee>(idvalue);
-
-                       
                     
-                    
-                    
+                    //var emp=session.EnableFilter("myFilter").SetParameter("myFilterParam",idvalue);
+                    //var results = session.CreateQuery("from Employee as e where e.EmpID = emp").List<Employee>();
+                    //dgFetchID.DataSource=results; 
                     tx.Commit();
                 }
             }
